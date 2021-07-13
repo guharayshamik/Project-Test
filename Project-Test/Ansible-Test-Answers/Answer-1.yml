@@ -1,0 +1,20 @@
+---
+- name: Prepare services in linux
+  host: all
+  become: True
+  tasks:
+  - name: check status of database_service
+    services:
+      name: database_service
+ 	  state: started
+ 	  enabled: True
+  - name: check status of application_service 
+    services:
+      name: application_service
+ 	  state: started
+ 	  enabled: True
+  - name: check status of web_service 
+    services:
+      name: web_service
+ 	  state: started
+ 	  enabled: True	

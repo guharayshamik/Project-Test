@@ -1,0 +1,30 @@
+Ans B: Modify the VM to increase the RAM to 32GB and storage to 1TB
+---------------------------------------------------------------------
+We need to modify the main.tf and do changes under resource "vsphere_virtual_machine" "new_vm" and resource "vsphere_virtual_disk" "my_disk" respectviely in order to increase the RAM to 32GB and storage to 1TB.
+once changes are made as below, upon terraform apply command.
+"-" signifies the removal of old configuration 
+"+" signifies the addition of new configuration 
+
+
+Changes in main.tf file as below:
+----------------------------------
+resource "vsphere_virtual_machine" "new_vm" {
+   name             = "new_vm-prov"
+   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
+   datastore_id     = data.vsphere_datastore.datastore.id
+
+   num_cpus = 4
+-  memory   = 8192
++  memory   = 32768
+
+  ## ...
+}
+
+resource "vsphere_virtual_disk" "my_disk" {
+- size       = 120
++ size       = 1024
+  vmdk_path  = "${var.vm_path}/my_disk.vmdk"
+  datacenter = "${var.datacenter}"
+  datastore  = "${var.datastore}"
+  type       = "thin"
+}

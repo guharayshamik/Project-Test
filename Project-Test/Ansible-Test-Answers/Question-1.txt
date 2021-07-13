@@ -1,0 +1,7 @@
+1).         Let us assume a Linux machine has a product installed which includes 3 services namely database_service, application_service and web_service
+
+•            Let us say there is a dependency in the order of service starting. For a proper working of the product, database_service should be started first and then the application_service followed by a web_service (database_service > application_service > web_service). So if the application_service requires a restart then application_service is restarted first and then web_service be restarted, but not database_service.
+
+•            Using ansible handlers write a program to check the status of each service and if some service is found stopped, restart only the required services in a proper order.
+
+Ans: Answer-1.yml

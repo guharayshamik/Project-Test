@@ -1,0 +1,3 @@
+5).         Write a python script to extract all usernames from the email addresses present in a given text file. Ex: username@domain.com. Display all user names, by sorting/ordering based on their domain names.
+
+Ans: Answer-5.py

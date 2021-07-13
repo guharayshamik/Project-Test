@@ -1,0 +1,36 @@
+Terraform:
+
+6).         For the below inputs
+
+a.           Take a snapshot of an existing ubuntu VM on a given vsphere server
+
+b.           Modify the VM to increase the RAM to 32GB and storage to 1TB,
+
+ 
+
+Vsphere details:
+
+vsphere user = admin
+
+vsphere password = Iwiiap@13ns
+
+vsphere server = 10.241.110.12
+
+VM path = dc1/testvm/myguestvm1
+
+
+Number of CPU = 4
+
+Memory = 8 GB
+
+HDD = 120 GB
+
+
+Datacenter = dc1
+
+datastore = dc1_datastore
+
+
+Ans: 6-A: main.tf, terraform.tfvars, variables.tf
+
+Ans: 6-B: main.tf_6B , Answer-6-B_support.txt
